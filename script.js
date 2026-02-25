@@ -13,7 +13,7 @@ button.addEventListener("click", function () {
 // swiper
 const swiper = new Swiper(".swiper", {
   // Optional parameters
-  direction: "vertical",
+  direction: "gorizontal",
   loop: true,
 
   // If we need pagination
