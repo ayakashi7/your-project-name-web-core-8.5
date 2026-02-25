@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "myfont";
+  src: url(./myfont/TTLakes-Medium.ttf);
+}
+.brands {
+  background: #f8f8f8;
+  padding: 40px 0;
+}
+.header {
+  background: linear-gradient(90deg, #f8f8f8 0%, #ffffff 98.61%);
+  padding: 3px 200px;
+  font-size: small;
+  color: #7e7e82;
+  border-top: 1px solid #5fdee7;
+  text-transform: uppercase;
+  font-family: "myfont";
+}
+.brands__container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.brands__list,
+.read-more {
+  display: grid;
+  gap: 16px 65px;
+  overflow: hidden;
+}
+
+.brand-item {
+  width: 224px;
+  height: 72px;
+  background: #ffffff;
+  border: 1px solid #e8e8ea;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.brand-item__go-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ff3e79;
+  background: #ffffff url(icon/go.svg) no-repeat center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.brands__expand-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  margin-top: 24px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  color: #1b1c21;
+  font-family: "myfont";
+}
+
+@media (min-width: 1120px) {
+  .brands__list,
+  .read-more {
+    grid-template-columns: repeat(4, 224px);
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1119px) {
+  .brands__list,
+  .read-more {
+    grid-template-columns: repeat(4, 224px);
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  .brands__list {
+    display: flex;
+    max-height: none;
+    overflow: visible;
+    gap: 30px;
+  }
+
+  .brand-item {
+    width: 240px;
+  }
+
+  .brands__expand-btn {
+    display: none;
+  }
+}
