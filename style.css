@@ -63,12 +63,18 @@
   color: #1b1c21;
   font-family: "myfont";
 }
-
+.swiper {
+  width: 600px;
+  height: 300px;
+}
 @media (min-width: 1120px) {
   .brands__list,
   .read-more {
     grid-template-columns: repeat(4, 224px);
     justify-content: flex-start;
+  }
+  .header {
+    padding: 10px calc((100% - 1120px) / 2);
   }
 }
 
@@ -77,6 +83,9 @@
   .read-more {
     grid-template-columns: repeat(4, 224px);
     justify-content: flex-start;
+  }
+  .header {
+    padding: 10px 24px;
   }
 }
 
@@ -94,5 +103,8 @@
 
   .brands__expand-btn {
     display: none;
+  }
+  .header {
+    padding: 10px 24px;
   }
 }
