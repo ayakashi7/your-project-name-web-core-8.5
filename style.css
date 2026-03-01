@@ -2,10 +2,14 @@
   font-family: "myfont";
   src: url(./myfont/TTLakes-Medium.ttf);
 }
+body {
+  margin: 0;
+}
 .brands {
   background: #f8f8f8;
   padding: 40px 0;
 }
+/* header */
 .header {
   background: linear-gradient(90deg, #f8f8f8 0%, #ffffff 98.61%);
   padding: 3px 200px;
@@ -20,16 +24,16 @@
   margin: 0 auto;
   padding: 0 24px;
 }
-
-.brands__list,
-.read-more {
+/* CONTENT */
+.brands__list {
   display: grid;
-  gap: 16px 65px;
+  height: 160px;
+  gap: 15px 65px;
   overflow: hidden;
 }
 
 .brand-item {
-  width: 224px;
+  width: 240px;
   height: 72px;
   background: #ffffff;
   border: 1px solid #e8e8ea;
@@ -38,6 +42,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .brand-item__go-btn {
@@ -49,7 +54,7 @@
   cursor: pointer;
   flex-shrink: 0;
 }
-
+/* KNOPKI */
 .brands__expand-btn {
   display: flex;
   align-items: center;
@@ -63,33 +68,45 @@
   color: #1b1c21;
   font-family: "myfont";
 }
-.swiper {
-  width: 600px;
-  height: 300px;
+.icon-rotate {
+  transform: rotate(180deg);
 }
 @media (min-width: 1120px) {
-  .brands__list,
-  .read-more {
+  .brands__list {
     grid-template-columns: repeat(4, 224px);
     justify-content: flex-start;
+    gap: 16px 65px;
   }
+
   .header {
     padding: 10px calc((100% - 1120px) / 2);
+  }
+
+  .swiper {
+    display: none;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1119px) {
-  .brands__list,
-  .read-more {
-    grid-template-columns: repeat(4, 224px);
+  .brands__list {
+    grid-template-columns: repeat(3, 224px);
     justify-content: flex-start;
+    gap: 16px 65px;
   }
+
   .header {
     padding: 10px 24px;
+  }
+
+  .swiper {
+    display: none;
   }
 }
 
 @media (max-width: 767px) {
+  .brands {
+    display: none;
+  }
   .brands__list {
     display: flex;
     max-height: none;
@@ -107,4 +124,19 @@
   .header {
     padding: 10px 24px;
   }
+  .swiper {
+    display: flex;
+    background: #f8f8f8;
+    height: 120px;
+  }
+  .swiper-slide {
+    height: 72px;
+    width: 240px;
+    padding-top: 13px;
+  }
+}
+/* swiper color */
+.swiper-pagination-bullet-active {
+  background: #7e7e82;
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
 }

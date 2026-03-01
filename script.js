@@ -1,34 +1,23 @@
 // <script>
 const button = document.getElementById("toggleBrands");
-const block = document.getElementById("brandsBlock");
+const block = document.getElementById("brandsList");
 button.addEventListener("click", function () {
-  if (block.style.display === "none") {
-    block.style.display = "block";
-    button.textContent = "Скрыть";
+  if (block.style.height === "300px") {
+    block.style.display = "auto";
+    button.innerHTML =
+      ' <img class="expand-icon icon-rotate" src="icon/icon.svg" alt="" /> <span class="expand-text ">Скрыть</span>';
   } else {
-    block.style.display = "none";
-    button.textContent = "Показать все";
+    block.style.height = "300px";
+    button.innerHTML =
+      ' <img class="expand-icon" src="icon/icon.svg" alt="" /> <span class="expand-text">Показать все</span>';
   }
 });
 // swiper
-const swiper = new Swiper(".swiper", {
-  // Optional parameters
-  direction: "gorizontal",
-  loop: true,
-
-  // If we need pagination
+var swiper = new Swiper(".swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
   pagination: {
     el: ".swiper-pagination",
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
+    clickable: true,
   },
 });
